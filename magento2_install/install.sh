@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 mkdir /var/www/magento2/pub/static
+cp auth.json /var/www/magento2/auth.json
 cd /var/www/magento2 &&\
 chown -R www-data /var/www/magento2 &&\
 sudo -u www-data php bin/magento setup:install --backend-frontname=admin\
     --amqp-host=127.0.0.1\
     --amqp-user=guest\
     --amqp-password=guest\
+    --amqp-port=5672\
     --db-host=127.0.0.1\
     --db-name=magento\
     --db-user=magento\
@@ -25,8 +27,10 @@ sudo -u www-data php bin/magento config:set admin/security/use_form_key 0 &&\
 sudo -u www-data php bin/magento config:set cms/wysiwyg/enabled disabled &&\
 sudo -u www-data php bin/magento config:set admin/security/admin_account_sharing 1 &&\
 sudo -u www-data php bin/magento cache:flush
-service php7.2-fpm stop
-service php7.2-fpm start
+service php7.2-fpm stop > /dev/null ||\
+service php7.1-fpm stop > /dev/null
+service php7.2-fpm start > /dev/null ||\
+service php7.1-fpm start > /dev/null
 service nginx restart > /dev/null ||\
 service apache2 restart > /dev/null
 service cron stop

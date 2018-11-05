@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+bin/echo -e "\n\n\e[1;32m=====================================================================================\e[0m\n\n"
+bin/echo -e "\e[1;32mInstalling PHP 7.1\e[0m"
+bin/echo -e "\n\n\e[1;32m=====================================================================================\e[0m\n\n"
+apt purge php7.2* -y
+apt autoremove -y
+add-apt-repository ppa:ondrej/php
+apt install -yqf\
+    composer\
+    php7.1\
+    php7.1-fpm\
+    php7.1-mysql\
+    php7.1-redis\
+    php7.1-json\
+    php7.1-soap\
+    php7.1-xml\
+    php7.1-bcmath\
+    php7.1-xdebug\
+    php7.1-curl\
+    php7.1-zip\
+    php7.1-mbstring\
+    php7.1-gd\
+    php7.1-intl\
+    php7.1-dev\
+    php7.1-mcrypt
+sed -i 's/memory_limit = 128M/memory_limit = 4096M/' /etc/php/7.1/fpm/php.ini
+sed -i 's/max_execution_time = 30/max_execution_time = 18000/' /etc/php/7.1/fpm/php.ini
+sed -i 's/zlib.output_compression = Off/zlib.output_compression = on/' /etc/php/7.1/fpm/php.ini
+sed -i 's/max_execution_time = 30/max_execution_time = 18000/' /etc/php/7.1/cli/php.ini
+cp /etc/magento/system/resources/magento2_php71.conf /etc/magento/system/resources/magento2.conf
+echo 'PHP_IDE_CONFIG="serverName=mage.ua"' >> /etc/environment
+bin/echo -e "\n\n\e[1;32m=====================================================================================\e[0m\n\n"
+bin/echo -e "\e[1;32mInstalled PHP 7.1\e[0m"
+bin/echo -e "\n\n\e[1;32m=====================================================================================\e[0m\n\n"

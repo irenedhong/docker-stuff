@@ -1,8 +1,9 @@
 FROM ubuntu:18.04
+ARG php_ver=7.2
 COPY install/basics.sh /etc/magento/system/install/
 COPY install/nginx.sh /etc/magento/system/install/
 COPY install/mysql.sh /etc/magento/system/install/
-COPY install/php.sh /etc/magento/system/install/
+COPY install/php${php_ver}.sh /etc/magento/system/install/php.sh
 COPY install/rabbitmq.sh /etc/magento/system/install/
 COPY install/redis.sh /etc/magento/system/install/
 COPY install/functional_tests_requirements.sh /etc/magento/system/install/
