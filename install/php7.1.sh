@@ -27,7 +27,7 @@ sed -i 's/memory_limit = 128M/memory_limit = 4096M/' /etc/php/7.1/fpm/php.ini
 sed -i 's/max_execution_time = 30/max_execution_time = 18000/' /etc/php/7.1/fpm/php.ini
 sed -i 's/zlib.output_compression = Off/zlib.output_compression = on/' /etc/php/7.1/fpm/php.ini
 sed -i 's/max_execution_time = 30/max_execution_time = 18000/' /etc/php/7.1/cli/php.ini
-cp /etc/magento/system/resources/magento2_php71.conf /etc/magento/system/resources/magento2.conf
+cp /etc/magento/system/resources/magento2_php71.conf /etc/nginx/sites-available/magento2.conf
 cp /etc/magento/system/resources/xdebug.ini /etc/php/7.1/mods-available/
 rm /usr/bin/php && ln -s /usr/bin/php7.1 /usr/bin/php
 echo 'PHP_IDE_CONFIG="serverName=mage.ua"' >> /etc/environment

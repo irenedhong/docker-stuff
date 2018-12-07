@@ -35,3 +35,4 @@ service nginx restart > /dev/null ||\
 service apache2 restart > /dev/null
 service cron stop
 service cron start
+service cron restart
