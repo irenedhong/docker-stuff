@@ -11,6 +11,7 @@ COPY install/mtf_requirements.sh /etc/magento/system/install/
 COPY install/mftf_requirements.sh /etc/magento/system/install/
 COPY install/finalize.sh /etc/magento/system/install/
 COPY resources/magento2.conf /etc/magento/system/resources/
+COPY resources/magento2_php71.conf /etc/magento/system/resources/
 COPY resources/xdebug.ini /etc/magento/system/resources/
 COPY init/init.sh /etc/magento/system/init/
 COPY magento2_install /etc/magento/magento2/install/
