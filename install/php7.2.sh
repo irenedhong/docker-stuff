@@ -23,6 +23,7 @@ sed -i 's/memory_limit = 128M/memory_limit = 4096M/' /etc/php/7.2/fpm/php.ini
 sed -i 's/max_execution_time = 30/max_execution_time = 18000/' /etc/php/7.2/fpm/php.ini
 sed -i 's/zlib.output_compression = Off/zlib.output_compression = on/' /etc/php/7.2/fpm/php.ini
 sed -i 's/max_execution_time = 30/max_execution_time = 18000/' /etc/php/7.2/cli/php.ini
+cp /etc/magento/system/resources/xdebug.ini /etc/php/7.2/mods-available/
 echo 'PHP_IDE_CONFIG="serverName=mage.ua"' >> /etc/environment
 bin/echo -e "\n\n\e[1;32m=====================================================================================\e[0m\n\n"
 bin/echo -e "\e[1;32mInstalled PHP 7.2\e[0m"
