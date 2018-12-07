@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 mkdir /var/www/magento2/pub/static
 cp auth.json /var/www/magento2/auth.json
+cp auth.json /root/.composer/auth.json
 cd /var/www/magento2 &&\
 chown -R www-data /var/www/magento2 &&\
 sudo -u www-data php bin/magento setup:install --backend-frontname=admin\
