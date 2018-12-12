@@ -9,6 +9,6 @@ service rabbitmq-server restart
 service cron restart
 redis-server &>/dev/null & disown
 Xvfb :11 -ac &>/etc/magento/logs/mtf_xvfb.log & disown
-export DISPLAY=:11 && sudo -u selenium java -jar /etc/magento/resources/mtf/selenium2.53.1.jar &>/etc/magento/logs/mtf_selenium.log & disown
+export DISPLAY=:11 && java -jar /etc/magento/resources/mtf/selenium2.53.1.jar &>/etc/magento/logs/mtf_selenium.log & disown
 Xvfb :10 -ac &>/etc/magento/logs/mftf_xvfb.log & disown
-export DISPLAY=:10 && sudo -u selenium java -jar /etc/magento/resources/mftf/selenium3.14.0.jar -port 44444 &>/etc/magento/logs/mftf_selenium.log & disown
+export DISPLAY=:10 && java -jar /etc/magento/resources/mftf/selenium3.14.0.jar -port 44444 &>/etc/magento/logs/mftf_selenium.log & disown
