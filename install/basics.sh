@@ -6,8 +6,8 @@ env TERM=linux
 apt update
 apt install -yq apt-utils
 apt install -yq tzdata
-ln -fs /usr/share/zoneinfo/Europe/Kiev /etc/localtime &&\
-echo "Europe/Kiev" > /etc/timezone &&\
+ln -fs /usr/share/zoneinfo/America/Chicago /etc/localtime &&\
+echo "America/Chicago" > /etc/timezone &&\
 dpkg-reconfigure --frontend noninteractive tzdata
 ##Installation
 apt install -yqf sudo\
