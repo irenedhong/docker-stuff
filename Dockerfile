@@ -17,6 +17,7 @@ COPY init/init.sh /etc/magento/system/init/
 COPY magento2_install /etc/magento/magento2/install/
 COPY resources/mtf /etc/magento/resources/mtf/
 COPY resources/mftf /etc/magento/resources/mftf/
+COPY resources/api-functional /etc/magento/resources/api-functional/
 COPY resources/crontab /etc/magento/system/resources/
 EXPOSE 80 443 22
 USER root

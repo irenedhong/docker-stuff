@@ -28,6 +28,7 @@ sudo -u www-data php bin/magento config:set admin/security/use_form_key 0 &&\
 sudo -u www-data php bin/magento config:set cms/wysiwyg/enabled disabled &&\
 sudo -u www-data php bin/magento config:set admin/security/admin_account_sharing 1 &&\
 sudo -u www-data php bin/magento cache:flush
+cp /etc/magento/resources/api-functional/install-config-mysql.php /var/www/magento2/dev/tests/api-functional/config/
 service php7.2-fpm stop > /dev/null ||\
 service php7.1-fpm stop > /dev/null
 service php7.2-fpm start > /dev/null ||\
