@@ -2,6 +2,9 @@
 bin/echo -e "\n\n\e[1;32m=====================================================================================\e[0m\n\n"
 bin/echo -e "\e[1;32mInstalling PHP 7.2\e[0m"
 bin/echo -e "\n\n\e[1;32m=====================================================================================\e[0m\n\n"
+apt purge php7.3* -y
+apt autoremove -y
+add-apt-repository ppa:ondrej/php -y
 apt install -yqf\
     composer\
     php7.2\
