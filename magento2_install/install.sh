@@ -30,7 +30,7 @@ sudo -u www-data php bin/magento config:set admin/security/admin_account_sharing
 sudo -u www-data php bin/magento cache:flush
 cp /etc/magento/resources/api-functional/install-config-mysql.php /var/www/magento2/dev/tests/api-functional/config/
 mv /etc/magento/resources/api-functional/rest.xml dev/tests/api-functional/phpunit.xml
-cp /etc/magento/resources/local_nginx.conf local_nginx.conf
+cp /etc/magento/system/resources/local_nginx.conf local_nginx.conf
 service php7.2-fpm stop > /dev/null ||\
 service php7.1-fpm stop > /dev/null
 service php7.2-fpm start > /dev/null ||\
